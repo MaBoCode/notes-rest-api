@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run" type="NodeJSConfigurationType" node-parameters="$USER_HOME$/.npm-global/bin/nodemon " path-to-js-file="$PROJECT_DIR$/../notes-rest-api/app.js" working-dir="$PROJECT_DIR$/../notes-rest-api">
+    <envs>
+      <env name="DEBUG" value="express-demo:*" />
+    </envs>
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+      <browser url="http://localhost:3000/" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>
