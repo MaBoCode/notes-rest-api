@@ -1,19 +1,8 @@
 
-const user1_notes = [
-    { id: 1, title: 'note1', content: 'content'},
-    { id: 2, title: 'note2', content: 'content'},
-    { id: 3, title: 'note3', content: 'content'}
-];
-
-const user2_notes = [
-    { id: 1, title: 'note4', content: 'content'},
-    { id: 2, title: 'note5', content: 'content'},
-    { id: 3, title: 'note6', content: 'content'}
-];
+const user1_notes = [];
 
 const users = [
     { id: 1, notes: user1_notes},
-    { id: 2, notes: user2_notes}
 ];
 
 exports.data = users;

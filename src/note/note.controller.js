@@ -1,10 +1,11 @@
 const Joi = require('joi');
+const dateformat = require('dateformat')
 const users = require('../user/user.controller').data;
 
 function validateNote(note) {
     const noteSchema = Joi.object({
-        title: Joi.string().min(8).required(),
-        content: Joi.string().required()
+        title: Joi.string().min(1).required(),
+        content: Joi.string().required(),
     });
     return noteSchema.validate(note);
 }
@@ -53,10 +54,12 @@ exports.add = (req, res) => {
         return res.status(400).send(error.details[0].message);
     }
 
+    const now = new Date();
     const note = {
         id: user.notes.length + 1,
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        dateAndTime: dateformat(now, "dddd, mmmm d, yyyy, h:MM TT")
     };
 
     user.notes.push(note);
@@ -65,6 +68,7 @@ exports.add = (req, res) => {
 
 exports.update = (req, res) => {
     console.log('Updating note...');
+
     const user = getUserFromId(req.params.userId);
     if (!user) {
         return res.status(404).send('User not found.');
