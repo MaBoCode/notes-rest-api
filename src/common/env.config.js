@@ -1,5 +1,9 @@
+const networkInterfaces = require('os').networkInterfaces();
+
+console.log(networkInterfaces);
+
 module.exports = {
     "port": 3000,
-    "host": "HOST_IP",
+    "host": networkInterfaces['wlp4s0']['address'],
     "environment": "dev"
 };
